@@ -69,4 +69,12 @@ public class DesignTacoController {
         .filter(x -> x.getType().equals(type))
         .collect(Collectors.toList());
     }
+
+    @PostMapping
+    public String processTaco(Taco taco, @ModelAttribute TacoOrder tacoOrder) {
+        tacoOrder.addTaco(taco);
+        log.info("Processing taco: {}", taco);
+        return "redirect:/orders/current";
+    }
+
 }
