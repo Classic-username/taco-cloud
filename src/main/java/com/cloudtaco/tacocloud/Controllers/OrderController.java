@@ -1,14 +1,15 @@
 package com.cloudtaco.tacocloud.Controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping; //Mans forgot this import in the book D:<
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import lombok.extern.slf4j.Slf4j;
-import com.cloudtaco.tacocloud.Domains.TacoOrder; // the use of this import comes later, book said we'll be refactoring the code to store information in a database but for the time being we make it like this.
+import com.cloudtaco.tacocloud.Domains.TacoOrder;
 
-@Slf4j // this supposedly happens at compile time
+@Slf4j 
 @Controller
 @RequestMapping("/orders")
 @SessionAttributes("tacoOrder")
@@ -17,6 +18,14 @@ public class OrderController {
     @GetMapping("/current")
     public String orderForm() {
         return "orderForm";
+    }
+
+    @PostMapping //book loves to leave out the new imports for things that "oops now this comes later"
+    public String processOrder (TacoOrder order, SessionStatus sessionStatus) {
+        log.info("Order submitted: {}", order);
+        sessionStatus.setComplete();
+
+        return "redirect:/";
     }
     
 }
