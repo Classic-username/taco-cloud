@@ -3,3 +3,7 @@ Added OrderController and orderForm files
 added update log
 
 Next time: 2.3 in book, page 76 PDF
+3/28/24
+Created formvalidation branch
+added validation dependency
+added form validation to various files
