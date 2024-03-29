@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.PostMapping; //Mans forgot this i
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.validation.Errors;
+
+import jakarta.validation.Valid;
 
 import lombok.extern.slf4j.Slf4j;
 import com.cloudtaco.tacocloud.Domains.TacoOrder;
@@ -21,7 +24,10 @@ public class OrderController {
     }
 
     @PostMapping //book loves to leave out the new imports for things that "oops now this comes later"
-    public String processOrder (TacoOrder order, SessionStatus sessionStatus) {
+    public String processOrder (@Valid TacoOrder order, Errors errors, SessionStatus sessionStatus) {
+        if (errors.hasErrors()){
+            return "orderForm";
+        }
         log.info("Order submitted: {}", order);
         sessionStatus.setComplete();
 

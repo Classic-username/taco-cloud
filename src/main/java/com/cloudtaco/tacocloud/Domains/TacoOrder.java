@@ -1,7 +1,7 @@
 package com.cloudtaco.tacocloud.Domains;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import java.util.List;
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ public class TacoOrder {
     @Pattern(regexp="^([1-9] |1[0-2]) ([\\/]) ([2-9] [0-9])$", message="Must be formatted MM/YY")
     private String ccExpiration;
 
-    @Digits(intiger=3, fraction=0, message="Invalid CVV")
+    @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
 
 
