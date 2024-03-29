@@ -1,9 +1,12 @@
 package com.cloudtaco.tacocloud.Controllers;
 
+import javax.validation.Valid;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -71,9 +74,15 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processTaco(Taco taco, @ModelAttribute TacoOrder tacoOrder) {
+    public String processTaco(@Valid Taco taco, Errors errors, @ModelAttribute TacoOrder tacoOrder) {
+
+        if(errors.hasErrors()) {
+            return "design";
+        }
+        
         tacoOrder.addTaco(taco);
         log.info("Processing taco: {}", taco);
+        
         return "redirect:/orders/current";
     }
 
