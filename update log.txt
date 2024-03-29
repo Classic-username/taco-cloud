@@ -7,3 +7,13 @@ Next time: 2.3 in book, page 76 PDF
 Created formvalidation branch
 added validation dependency
 added form validation to various files
+
+3/29/24
+Created validationerrors branch
+Ran a formatter in each HTML file
+Implemented form validation in the orderController HTML page
+Need to implement in design page, and there is an issue with the credit card and expiration validation. I cannot get past them.
+
+Next time:
+Troubleshoot submission errors on orderController page/controller
+implement validation in design html file 
