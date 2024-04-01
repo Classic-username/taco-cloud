@@ -24,3 +24,9 @@ Issue with credit cards was they cannot be any random 16 digits. Went with one f
 Implemented validation in design page.
 Created a webconfig folder and file, implemented WebMvcConfigurer and added the home route to this.
 Removed home controller.
+
+4/1/24
+Updated domain objects to prepare for data persistence
+renamed application.properties to application.yaml as the book says it will be using yaml format going forward
+added h2database and starter jdbc dependencies
+Created ingredient repository interface and jdbc class
