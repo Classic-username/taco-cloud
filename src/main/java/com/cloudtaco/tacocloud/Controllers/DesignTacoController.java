@@ -3,8 +3,8 @@ package com.cloudtaco.tacocloud.Controllers;
 import jakarta.validation.Valid;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -84,9 +84,8 @@ public class DesignTacoController {
         return "design";
     }
 
-    private Iterable<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
-        return ingredients
-        .stream()
+    private Iterable<Ingredient> filterByType(Iterable<Ingredient> ingredients, Type type) {
+        return StreamSupport.stream(ingredients.spliterator(), false)// The book did NOT tell us this part (at least by page 69 when we refactor this class)
         .filter(x -> x.getType().equals(type))
         .collect(Collectors.toList());
     }
@@ -99,7 +98,8 @@ public class DesignTacoController {
         }
         
         tacoOrder.addTaco(taco);
-        log.info("Processing taco: {}", taco);
+        System.out.printf("Processing taco: {}", taco);
+        //the logger was removed by the book and also apparently this logging statament stopped working. converted to system out print.
         
         return "redirect:/orders/current";
     }
