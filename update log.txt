@@ -30,3 +30,8 @@ Updated domain objects to prepare for data persistence
 renamed application.properties to application.yaml as the book says it will be using yaml format going forward
 added h2database and starter jdbc dependencies
 Created ingredient repository interface and jdbc class
+
+4/3/24
+Added save override to jdbcingredientrepository
+Injected ingredient repo into designtacocontroller and cleaned up errors (had to reference code from book repo on github)
+Refactored converter for DB calls
