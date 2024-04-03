@@ -22,13 +22,10 @@ import com.cloudtaco.tacocloud.Repositories.IngredientRepository;
 import com.cloudtaco.tacocloud.Domains.Taco;
 import com.cloudtaco.tacocloud.Domains.TacoOrder;
 
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("tacoOrder")
-
 public class DesignTacoController {
 
     private final IngredientRepository ingredientRepo;
