@@ -40,3 +40,8 @@ Refactored converter for DB calls
 Added db schema
 Added data to be created at runtime
 application has errors, will need to debug
+
+4/5/24
+Fixed db issues
+re added slf4j logger because sys out print was not showing what I expected
+
