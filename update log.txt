@@ -14,10 +14,6 @@ Ran a formatter in each HTML file
 Implemented form validation in the orderController HTML page
 Need to implement in design page, and there is an issue with the credit card and expiration validation. I cannot get past them.
 
-Next time:
-Troubleshoot submission errors on orderController page/controller
-implement validation in design html file 
-
 3/30/24
 Determined the issue for CCExpiration field was because there was space in the regex.
 Issue with credit cards was they cannot be any random 16 digits. Went with one found online 4444333322221111.
@@ -45,3 +41,18 @@ application has errors, will need to debug
 Fixed db issues
 re added slf4j logger because sys out print was not showing what I expected
 
+4/6/24 part 1
+added orderrepository interface
+added ingredientref in domains
+Created JdbcorderRepository class
+had to update a data type in Taco domain so jdbcOrderRepository would work
+Injected OrderRepository into OrderController
+Troubleshooting
+Added readme with instructions for accessing h2 console
+!!!!----THIS WILL BE THE LAST BRANCH MERGED TO THE MAIN REPO----!!!!
+The book is starting to h e a v i l y diverge from being able to have a coherent project structure, and is refactoring things seemingly willy nilly.
+Assuming I follow the book and continue merging, I will lose previous work examples, so for the sake of keeping the examples, I will be saving each thing to its own branch and not merging into main.
+
+
+Important message to copy:
+Check Readme for Accessing the H2 database
