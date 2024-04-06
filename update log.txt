@@ -53,6 +53,17 @@ Added readme with instructions for accessing h2 console
 The book is starting to h e a v i l y diverge from being able to have a coherent project structure, and is refactoring things seemingly willy nilly.
 Assuming I follow the book and continue merging, I will lose previous work examples, so for the sake of keeping the examples, I will be saving each thing to its own branch and not merging into main.
 
+4/6/24 part 2
+Changed to JDBC data dependency instead of JdbcTemplate
+Updated orderRepository to use JDBC instead of JDBC Template
+Updated ingredientRepository to use JDBC instead of JDBC Template
+Removed unnecessary classes, these aren't needed with JDBC data
+Annotated some domain objects with @table and @id
+ingredient.java is fully prepped for data persistence
 
 Important message to copy:
 Check Readme for Accessing the H2 database
+
+Next time:
+Book page 83 PDF page 110
+Preloading data with CommandLineRunner
