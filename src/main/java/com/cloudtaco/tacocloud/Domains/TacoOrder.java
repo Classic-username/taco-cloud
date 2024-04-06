@@ -3,6 +3,10 @@ import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.CreditCardNumber;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
+
 import java.util.List;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,14 +15,17 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
+@Table("Taco_Cloud_Order") //This is the purpose of the table annotation, to map the class to a different table name. This is now here solely for example purposes. Hopefully it doesn't break anything.
 public class TacoOrder implements Serializable {
 
     private static final Long serialVersionUID = 1L;
 
+    @Id
     private Long id;
 
     private Date placedAt;
 
+    @Column("customer_name") //Yet another annotation solely for example purposes. This maps this value to a column other than default which would have been "delivery_name"
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
 
