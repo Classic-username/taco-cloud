@@ -61,9 +61,12 @@ Removed unnecessary classes, these aren't needed with JDBC data
 Annotated some domain objects with @table and @id
 ingredient.java is fully prepped for data persistence
 
+4/8/24
+removed final from ingredient.java so the project could run
+changed repo to crudrepo in ingredrepo for a method in CommandLineRunner
+Initialized date in TacoOrder because it was previously initialized in a jdbc repo which was deleted
+added commandlinerunner to APP file
+deleted unused sql file
+
 Important message to copy:
 Check Readme for Accessing the H2 database
-
-Next time:
-Book page 83 PDF page 110
-Preloading data with CommandLineRunner
