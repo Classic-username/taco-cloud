@@ -15,7 +15,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-@Table("Taco_Cloud_Order") //This is the purpose of the table annotation, to map the class to a different table name. This is now here solely for example purposes. Hopefully it doesn't break anything.
+// @Table("Taco_Cloud_Order") //This is the purpose of the table annotation, to map the class to a different table name. This is now here solely for example purposes. Hopefully it doesn't break anything. //Update: It broke everything so I'm removing it.
 public class TacoOrder implements Serializable {
 
     private static final Long serialVersionUID = 1L;
@@ -23,9 +23,10 @@ public class TacoOrder implements Serializable {
     @Id
     private Long id;
 
-    private Date placedAt;
+    private Date placedAt = new Date();
 
-    @Column("customer_name") //Yet another annotation solely for example purposes. This maps this value to a column other than default which would have been "delivery_name"
+    // @Column("customer_name") //Yet another annotation solely for example purposes. This maps this value to a column other than default which would have been "delivery_name"
+    // Removing this as well as the table annotation above
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
 
