@@ -16,24 +16,24 @@ import lombok.NoArgsConstructor;
 public class Ingredient implements Persistable<String> {
     
     @Id
-    private final String id;
+    private String id;
 
-    private final String name;
+    private String name;
 
-    private final Type type;
+    private Type type;
 
     public enum Type {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
     }
 
-    @Override
-    public boolean isNew() {
-        throw new UnsupportedOperationException("Unimplemented method 'isNew'");
-    }
-    //This override is auto generated to get past YET MORE THINGS THIS BOOK DOES NOT EXPLAIN OR SHOW
-    //The book did not show this (as of page 83) but its implementation of this method is:
     // @Override
     // public boolean isNew() {
-    //     return true;
+    //     throw new UnsupportedOperationException("Unimplemented method 'isNew'");
     // }
+    //This override is auto generated to get past YET MORE THINGS THIS BOOK DOES NOT EXPLAIN OR SHOW
+    //The book did not show this (as of page 83) but its implementation of this method is:
+    @Override
+    public boolean isNew() {
+        return true;
+    }
 }
