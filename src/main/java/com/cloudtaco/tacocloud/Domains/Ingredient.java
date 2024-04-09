@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.With;
 
 @Data
 @Table
@@ -16,11 +17,11 @@ import lombok.NoArgsConstructor;
 public class Ingredient implements Persistable<String> {
     
     @Id
-    private String id;
+    private @With final String id;
 
-    private String name;
+    private @With final String name;
 
-    private Type type;
+    private @With final Type type;
 
     public enum Type {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
