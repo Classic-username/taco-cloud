@@ -70,3 +70,13 @@ deleted unused sql file
 
 Important message to copy:
 Check Readme for Accessing the H2 database
+
+4/9/24
+Added final back to ingredient object, and added lombok @with annotation.
+Checked out new branch
+Updated pom.xml with jpa dependency instead of jdbc
+Updated ingredient domain object to use JPA instead of JDBC
+Updated taco domain object for jpa instead of jdbc
+Updated tacoorder domain object for jpa instead of jdbc
+Removed comments from ingredientrepo interface
+
