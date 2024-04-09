@@ -1,32 +1,36 @@
 package com.cloudtaco.tacocloud.Domains;
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import org.hibernate.validator.constraints.CreditCardNumber;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.List;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.CreditCardNumber;
+
+
 import lombok.Data;
 
 @Data
-// @Table("Taco_Cloud_Order") //This is the purpose of the table annotation, to map the class to a different table name. This is now here solely for example purposes. Hopefully it doesn't break anything. //Update: It broke everything so I'm removing it.
+@Entity
 public class TacoOrder implements Serializable {
 
     private static final Long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private Date placedAt = new Date();
 
-    // @Column("customer_name") //Yet another annotation solely for example purposes. This maps this value to a column other than default which would have been "delivery_name"
-    // Removing this as well as the table annotation above
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
 
@@ -51,7 +55,7 @@ public class TacoOrder implements Serializable {
     @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
 
-
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {
