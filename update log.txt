@@ -87,3 +87,8 @@ updated app.yml to point at cassandra
 experiencing issues running the docker commands for cassandra. Stack overflow post:
 https://stackoverflow.com/questions/78304781/spring-in-action-sixth-edition-page-96-docker-commands-errors
 
+4/11/24
+added username and password to cassandra config in yml
+Updated ingredient domain object to use Cassandra
+Updated taco class for cassandra 
+
