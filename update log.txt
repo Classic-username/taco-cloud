@@ -92,3 +92,7 @@ added username and password to cassandra config in yml
 Updated ingredient domain object to use Cassandra
 Updated taco class for cassandra 
 
+4/12/24
+Missed the UDT for ingredient
+Added UDT folder
+Added IngredientUDT for cassandra db
