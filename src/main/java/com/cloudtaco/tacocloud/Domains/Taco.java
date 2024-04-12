@@ -34,10 +34,10 @@ public class Taco {
 
     @Size(min=1, message="You must choose at least one ingredient")
     @Column("ingredients")
-    private List<Ingredient> ingredients = new ArrayList<>();
+    private List<IngredientUDT> ingredients = new ArrayList<>();
 
     public void addIngredient(Ingredient ingredient){
-        this.ingredients.add(ingredient);
+        this.ingredients.add(TacoUDRUtils.toIngredientUDT(ingredient));
     }
     
 }
