@@ -14,6 +14,7 @@ import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
+import com.cloudtaco.tacocloud.UDTs.IngredientUDT;
 import com.datastax.oss.driver.api.core.uuid.Uuids;
 
 import lombok.Data;
