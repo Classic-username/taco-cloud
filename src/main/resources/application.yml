@@ -1,10 +1,11 @@
 spring:
-    cassandra:
-        keyspace-name: taco_cloud
-        schema-action: recreate
-        local-datacenter: datacenter1
-        username: tacocloud
-        password: s3cr3tP455w0rd
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            username: tacocloud
+            password: s3cr3tP455w0rd
+            database: sleepy_spence
 
 # Setting contact points if the cassandra server isn't running locally:
 # spring:
