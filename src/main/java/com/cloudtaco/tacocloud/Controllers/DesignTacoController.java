@@ -23,7 +23,6 @@ import lombok.extern.slf4j.Slf4j;
 import com.cloudtaco.tacocloud.Domains.Ingredient;
 import com.cloudtaco.tacocloud.Domains.Ingredient.Type;
 import com.cloudtaco.tacocloud.Repositories.IngredientRepository;
-import com.cloudtaco.tacocloud.UDTs.TacoUDT;
 import com.cloudtaco.tacocloud.Domains.Taco;
 import com.cloudtaco.tacocloud.Domains.TacoOrder;
 
@@ -75,8 +74,7 @@ public class DesignTacoController {
             return "design";
         }
         
-        tacoOrder.addTaco(new TacoUDT(taco.getName(), taco.getIngredients()));
-        log.info("Processing taco: {}", taco);
+        tacoOrder.addTaco(taco);
         //the logger was removed by the book and also apparently this logging statament stopped working. converted to system out print.
         
         return "redirect:/orders/current";
