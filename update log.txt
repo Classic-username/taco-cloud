@@ -96,3 +96,31 @@ Updated taco class for cassandra
 Missed the UDT for ingredient
 Added UDT folder
 Added IngredientUDT for cassandra db
+
+4/13/24
+Updated TacoOrder to use cassandra
+Created TacoUDT class to be referenced in TacoOrder
+Added an import to taco.java for the ingredientUDT, still needs troubleshooting
+Updated TacoOrder to use cassandra
+Added TacoUDRUtils
+Imported newly created TacoUDRUtils import to taco.java
+Updated OrderRepository for cassandra
+Refactored designtacocontroller to use tacoUDT, and aligned with the book
+Added an appconfig.java for 
+
+4/14/24
+Made pom.xml match book code
+Re added test dependency so project would run
+
+4/16/24
+All commits in this push have been troubleshooting the cassandra connection, we will be coming back to this later.
+
+Troubleshooting connection issue:
+Error connecting to Node(endPoint=/127.0.0.1:9042, hostId=null, hashCode=5c3503a4), trying next node (ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (io.netty.channel.StacklessClosedChannelException))
+https://datastax-oss.atlassian.net/browse/JAVA-2936
+
+Important message to copy:
+Check Readme for Accessing the H2 database
+Next time:
+page 103 in book, 130 PDF
+Mapping the TacoOrder class to a Cassandra orders table
