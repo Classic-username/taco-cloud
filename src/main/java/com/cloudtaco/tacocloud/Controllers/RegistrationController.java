@@ -30,5 +30,5 @@ public class RegistrationController {
         userRepo.save(form.toUser(passwordEncoder));
         return "redirect:/login";
     }
-    
+
 }

@@ -149,6 +149,21 @@ failed: org.springframework.data.mongodb.UncategorizedMongoDbException: Exceptio
 com.mongodb.MongoCommandException: Command failed with error 18 (AuthenticationFailed): 'Authentication failed.' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Authentication failed.", "code": 
 18, "codeName": "AuthenticationFailed"}
 
+4/20/24
+added security dependency
+added security folder and subfolders
+added securityconfig.java
+added Buzz and Woody as users in the in-memory list
+Created user domain object for users
+Added data jpa dependency so jakarta imports would work
+Created userrepository
+updated securityconfig to use actual users and not pre-written users
+Created registrationcontroller to register users
+created registration html page
+Created registrationform
+
+4/23/24
+debugging, changing branches
 
 
 Troubleshooting connection issue:
