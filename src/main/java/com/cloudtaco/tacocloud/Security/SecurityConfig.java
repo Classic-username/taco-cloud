@@ -44,6 +44,12 @@ public class SecurityConfig {
                 .requestMatchers("/", "/**")
                 .permitAll()
             )
+            .formLogin(formLogin -> formLogin
+                .loginPage("/login")
+                .defaultSuccessUrl("/", true)
+            )
+            //logging out...
+            //.rememberMe(rememberMe -> rememberMe.key("seeminglyrandomstring...")).logout(logout -> logout.logoutUrl("/signout").permitAll())
             .build();
     }
 }
