@@ -175,6 +175,12 @@ added register template
 updated registrationcontroller to point at registrationform
 updated SecurityConfig with new spring security formatting
 
+4/24/24
+added login to securityconfig
+added login route to webconfig
+added login to thymeleaf templates
+Removed whitespace
+attempted fix with mvc.pattern, didn't work.
 
 
 
