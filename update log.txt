@@ -182,7 +182,10 @@ added login to thymeleaf templates
 Removed whitespace
 attempted fix with mvc.pattern, didn't work.
 
-
+4/25/24
+Fixed securityconfig error
+Unsatisfied dependency expressed through field 'mvc': Error creating bean with name 'securityConfig': Requested bean is currently in creation: Is there an unresolvable circular reference?
+preventing the app from running
 
 
 
