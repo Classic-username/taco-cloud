@@ -6,10 +6,6 @@ spring:
         oauth2:
             client:
                 registration:
-                    facebook:
-                        clientId: <facebook client id>
-                        clientSecret: <facebook client secret>
-                        scope: email, public_profile
                     github:
                         clientId: d4dd1f91557ada7be36b
                         clientSecret: c2a47df5842db28fdd69d335d0b8a356ea2787a8
