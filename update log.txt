@@ -187,6 +187,13 @@ Fixed securityconfig error
 Unsatisfied dependency expressed through field 'mvc': Error creating bean with name 'securityConfig': Requested bean is currently in creation: Is there an unresolvable circular reference?
 preventing the app from running
 
+4/30/24
+added oauth2 to dependencies
+updated app.yml for oauth 2
+Updated app.yml and login template to use Github oauth
+added oauth2 login to filterchain
+Removed facebook from app.yml
+
 
 
 Troubleshooting connection issue:
