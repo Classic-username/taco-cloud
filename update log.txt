@@ -194,6 +194,13 @@ Updated app.yml and login template to use Github oauth
 added oauth2 login to filterchain
 Removed facebook from app.yml
 
+5/1/24
+Renamed user to users and updated all imports to reflect
+deleted unused schema sql
+Deleted google config copied from stack overflow
+removed extra lines
+
+
 
 
 Troubleshooting connection issue:
