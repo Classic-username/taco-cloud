@@ -24,6 +24,7 @@ import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 import org.springframework.security.oauth2.core.oidc.IdTokenClaimNames;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.server.csrf.CookieServerCsrfTokenRepository;
 import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 
@@ -54,8 +55,9 @@ public class SecurityConfig {
     
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http, MvcRequestMatcher.Builder mvc) throws Exception {
-        return http
-        .csrf(AbstractHttpConfigurer::disable)
+        http
+            // .csrf(csrf -> csrf.disable())
+            // .csrfTokenRepository(CookieServerCsrfTokenRepository.withHttpOnlyFalse())
             .authorizeHttpRequests((authorize) -> authorize
                 .requestMatchers(mvc.pattern("/design"), mvc.pattern("/orders")).hasRole("USER")
                 .requestMatchers(mvc.pattern("/"), mvc.pattern("/**"))
@@ -66,9 +68,10 @@ public class SecurityConfig {
                 .defaultSuccessUrl("/design", true)
                 .permitAll()
             )
-            .oauth2Login(Customizer.withDefaults())
+            .oauth2Login(oauth2Login -> oauth2Login.defaultSuccessUrl("/design", true));
             //logging out...
             //.rememberMe(rememberMe -> rememberMe.key("seeminglyrandomstring...")).logout(logout -> logout.logoutUrl("/signout").permitAll())
-            .build();
+
+        return http.build();
     }
 }
