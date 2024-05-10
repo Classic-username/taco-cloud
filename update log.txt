@@ -211,6 +211,7 @@ Created an OAuth2UserService file, it has several imported files we don't have c
 Commented attempted logic to save oauth2 users
 Updated registrationcontroller to use the right template
 Added comment about github login being broken
+Added h2 console enabled in app.yml
 
 Next time:
 troubleshooting 403 error after login
