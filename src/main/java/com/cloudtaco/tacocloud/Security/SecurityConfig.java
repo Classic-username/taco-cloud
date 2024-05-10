@@ -33,6 +33,8 @@ import com.cloudtaco.tacocloud.Repositories.UserRepository;
 
 @Configuration
 public class SecurityConfig {
+    private UserRepository userRepo;
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -68,7 +70,11 @@ public class SecurityConfig {
                 .defaultSuccessUrl("/design", true)
                 .permitAll()
             )
-            .oauth2Login(oauth2Login -> oauth2Login.defaultSuccessUrl("/design", true));
+            .oauth2Login(oauth2Login -> oauth2Login
+                .defaultSuccessUrl("/design", true)
+                .loginPage("/login")
+                // .userInfoEndpoint(infoEndpoint -> infoEndpoint.userService(oAuth2UserService))
+            );
             //logging out...
             //.rememberMe(rememberMe -> rememberMe.key("seeminglyrandomstring...")).logout(logout -> logout.logoutUrl("/signout").permitAll())
 
