@@ -200,7 +200,24 @@ deleted unused schema sql
 Deleted google config copied from stack overflow
 removed extra lines
 
+5/2/24
+Got the csrf disable working, it doesn't fix the 403 error. Found some lambda stuff with the oauth2Login, will be looking into that
 
+5/7/24
+attempted some login stuff in securityconfig, it isn't working yet
+
+5/10/24
+Created an OAuth2UserService file, it has several imported files we don't have created so we'll be moving on in the book.
+Commented attempted logic to save oauth2 users
+Updated registrationcontroller to use the right template
+Added comment about github login being broken
+
+Next time:
+troubleshooting 403 error after login
+possibly 
+https://docs.spring.io/spring-security/reference/migration-7/configuration.html
+for configuring ldap server
+Creating a custom login page 160 PDF
 
 
 Troubleshooting connection issue:
