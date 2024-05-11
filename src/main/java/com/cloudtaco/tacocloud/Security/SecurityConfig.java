@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -61,9 +62,9 @@ public class SecurityConfig {
             // .csrf(csrf -> csrf.disable())
             // .csrfTokenRepository(CookieServerCsrfTokenRepository.withHttpOnlyFalse())
             .authorizeHttpRequests((authorize) -> authorize
+                // .requestMatchers(mvc.pattern("/h2-console/**")).permitAll()
                 .requestMatchers(mvc.pattern("/design"), mvc.pattern("/orders")).hasRole("USER")
-                .requestMatchers(mvc.pattern("/"), mvc.pattern("/**"))
-                .permitAll()
+                .requestMatchers(mvc.pattern("/"), mvc.pattern("/**")).permitAll()
             )
             .formLogin(formLogin -> formLogin
                 .loginPage("/login")
@@ -73,11 +74,15 @@ public class SecurityConfig {
             .oauth2Login(oauth2Login -> oauth2Login
                 .defaultSuccessUrl("/design", true)
                 .loginPage("/login")
-                // .userInfoEndpoint(infoEndpoint -> infoEndpoint.userService(oAuth2UserService))
             );
-            //logging out...
-            //.rememberMe(rememberMe -> rememberMe.key("seeminglyrandomstring...")).logout(logout -> logout.logoutUrl("/signout").permitAll())
+            // .rememberMe(rememberMe -> rememberMe.key("seeminglyrandomstring..."))
+            // .logout(logout -> logout.logoutUrl("/signout").permitAll());
 
         return http.build();
+    }
+
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer(MvcRequestMatcher.Builder mvc) {
+        return (web) -> web.ignoring().requestMatchers(mvc.pattern("/h2-console/**"));
     }
 }

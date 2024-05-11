@@ -99,7 +99,7 @@ public class DesignTacoController {
             return "design";
         }
         
-        tacoOrder.addTaco(taco);
+        Taco saved = tacoOrder.addTaco(taco);
         log.info("Processing taco: {}", taco);
         //the logger was removed by the book and also apparently this logging statament stopped working. converted to system out print.
         
