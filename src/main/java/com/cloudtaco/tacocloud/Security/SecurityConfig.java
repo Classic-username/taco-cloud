@@ -74,9 +74,9 @@ public class SecurityConfig {
             .oauth2Login(oauth2Login -> oauth2Login
                 .defaultSuccessUrl("/design", true)
                 .loginPage("/login")
-            );
+            )
             // .rememberMe(rememberMe -> rememberMe.key("seeminglyrandomstring..."))
-            // .logout(logout -> logout.logoutUrl("/signout").permitAll());
+            .logout(logout -> logout.logoutSuccessUrl("/"));
 
         return http.build();
     }
