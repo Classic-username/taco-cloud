@@ -29,10 +29,10 @@ import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 
 import com.cloudtaco.tacocloud.Domains.Users;
-import com.cloudtaco.tacocloud.Repositories.UserRepository;
 
 @Configuration
 public class SecurityConfig {
+  
     private UserRepository userRepo;
 
     @Bean
