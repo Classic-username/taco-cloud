@@ -107,7 +107,7 @@ public class DesignTacoController {
         
         tacoOrder.addTaco(taco);
         tacoOrder.setUser(user);
-        log.info("Processing taco: {}", taco);
+        log.info("Processing taco: {}", taco);  
     
         return "redirect:/orders/current";
     }
