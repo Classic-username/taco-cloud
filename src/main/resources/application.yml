@@ -1,8 +1,12 @@
-# spring:
-#     data:
-#         mongodb:
-#             host: localhost
-#             port: 27017
-#             username: tacocloud
-#             password: secret
-#             database: test
+spring:
+    datasource:
+        generate-unique-name: false
+        name: tacocloud
+    security:
+        oauth2:
+            client:
+                registration:
+                    github:
+                        clientId: d4dd1f91557ada7be36b
+                        clientSecret: c2a47df5842db28fdd69d335d0b8a356ea2787a8
+

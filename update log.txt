@@ -164,6 +164,60 @@ Created registrationform
 
 4/23/24
 debugging, changing branches
+Pulled datapersistencejpa repo for easier refactoring, checking out new spring security branch from this for easier refactoring
+added security dependency
+added securityconfig.java
+added temp bean to securityconfig
+added user domain class
+added user repository
+added RegistrationForm
+added register template
+updated registrationcontroller to point at registrationform
+updated SecurityConfig with new spring security formatting
+
+4/24/24
+added login to securityconfig
+added login route to webconfig
+added login to thymeleaf templates
+Removed whitespace
+attempted fix with mvc.pattern, didn't work.
+
+4/25/24
+Fixed securityconfig error
+Unsatisfied dependency expressed through field 'mvc': Error creating bean with name 'securityConfig': Requested bean is currently in creation: Is there an unresolvable circular reference?
+preventing the app from running
+
+4/30/24
+added oauth2 to dependencies
+updated app.yml for oauth 2
+Updated app.yml and login template to use Github oauth
+added oauth2 login to filterchain
+Removed facebook from app.yml
+
+5/1/24
+Renamed user to users and updated all imports to reflect
+deleted unused schema sql
+Deleted google config copied from stack overflow
+removed extra lines
+
+5/2/24
+Got the csrf disable working, it doesn't fix the 403 error. Found some lambda stuff with the oauth2Login, will be looking into that
+
+5/7/24
+attempted some login stuff in securityconfig, it isn't working yet
+
+5/10/24
+Created an OAuth2UserService file, it has several imported files we don't have created so we'll be moving on in the book.
+Commented attempted logic to save oauth2 users
+Updated registrationcontroller to use the right template
+Added comment about github login being broken
+
+Next time:
+troubleshooting 403 error after login
+possibly 
+https://docs.spring.io/spring-security/reference/migration-7/configuration.html
+for configuring ldap server
+Creating a custom login page 160 PDF
 
 
 Troubleshooting connection issue:
