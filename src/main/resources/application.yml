@@ -1,8 +1,8 @@
-spring:
-    data:
-        mongodb:
-            host: localhost
-            port: 27017
-            username: tacocloud
-            password: secret
-            database: test
+# spring:
+#     data:
+#         mongodb:
+#             host: localhost
+#             port: 27017
+#             username: tacocloud
+#             password: secret
+#             database: test
