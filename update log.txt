@@ -211,13 +211,28 @@ Created an OAuth2UserService file, it has several imported files we don't have c
 Commented attempted logic to save oauth2 users
 Updated registrationcontroller to use the right template
 Added comment about github login being broken
+Added h2 console enabled in app.yml
+
+5/11/24
+Refactoring for user persistence and permission to save in DB
+
+5/12/24
+Cleaned up main repo by cloning changes
+added csrf token input to HTML Templates
+updated design controller to handle user info
+created tacorepo
+re-refactored design controller for submission
+added logout button to HTML pages
+cleaned whitespace (I think?)
+Removed logout from home page
+wrote logout handler in security config
+Merge branch 'newspringsecurity' of https://github.com/Classic-username/taco-cloud into newspringsecurity (resolved merge conflicts)
+Some merge complications, will need to fix before moving on.
+
 
 Next time:
-troubleshooting 403 error after login
-possibly 
-https://docs.spring.io/spring-security/reference/migration-7/configuration.html
-for configuring ldap server
-Creating a custom login page 160 PDF
+debugging
+Next chapter
 
 
 Troubleshooting connection issue:

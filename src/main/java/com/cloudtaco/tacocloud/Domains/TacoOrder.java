@@ -5,18 +5,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 
 @Data
-@Document
 public class TacoOrder implements Serializable {
 
     private static final Long serialVersionUID = 1L;
@@ -25,6 +29,9 @@ public class TacoOrder implements Serializable {
     private String id;
 
     private Date placedAt = new Date();
+
+    @ManyToOne
+    private Users user;
 
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
