@@ -80,3 +80,47 @@ Updated taco domain object for jpa instead of jdbc
 Updated tacoorder domain object for jpa instead of jdbc
 Removed comments from ingredientrepo interface
 
+4/10/24
+Created new branch
+Updated pom file with dependency for cassandra
+updated app.yml to point at cassandra
+experiencing issues running the docker commands for cassandra. Stack overflow post:
+https://stackoverflow.com/questions/78304781/spring-in-action-sixth-edition-page-96-docker-commands-errors
+
+4/11/24
+added username and password to cassandra config in yml
+Updated ingredient domain object to use Cassandra
+Updated taco class for cassandra 
+
+4/12/24
+Missed the UDT for ingredient
+Added UDT folder
+Added IngredientUDT for cassandra db
+
+4/13/24
+Updated TacoOrder to use cassandra
+Created TacoUDT class to be referenced in TacoOrder
+Added an import to taco.java for the ingredientUDT, still needs troubleshooting
+Updated TacoOrder to use cassandra
+Added TacoUDRUtils
+Imported newly created TacoUDRUtils import to taco.java
+Updated OrderRepository for cassandra
+Refactored designtacocontroller to use tacoUDT, and aligned with the book
+Added an appconfig.java for 
+
+4/14/24
+Made pom.xml match book code
+Re added test dependency so project would run
+
+4/16/24
+All commits in this push have been troubleshooting the cassandra connection, we will be coming back to this later.
+
+Troubleshooting connection issue:
+Error connecting to Node(endPoint=/127.0.0.1:9042, hostId=null, hashCode=5c3503a4), trying next node (ConnectionInitException: [s0|control|connecting...] Protocol initialization request, step 1 (OPTIONS): failed to send request (io.netty.channel.StacklessClosedChannelException))
+https://datastax-oss.atlassian.net/browse/JAVA-2936
+
+Important message to copy:
+Check Readme for Accessing the H2 database
+Next time:
+page 103 in book, 130 PDF
+Mapping the TacoOrder class to a Cassandra orders table
