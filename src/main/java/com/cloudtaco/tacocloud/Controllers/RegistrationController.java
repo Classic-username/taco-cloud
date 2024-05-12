@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cloudtaco.tacocloud.Domains.RegistrationForm;
+
 import com.cloudtaco.tacocloud.Repositories.UserRepository;
 
 @Controller
@@ -17,13 +18,16 @@ public class RegistrationController {
 
     public RegistrationController(
             UserRepository userRepo, PasswordEncoder passwordEncoder) {
+
         this.userRepo = userRepo;
         this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping
     public String registerForm() {
-        return "register";
+
+        return "registration";
+
     }
 
     @PostMapping
