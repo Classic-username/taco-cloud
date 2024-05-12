@@ -53,6 +53,30 @@ Added readme with instructions for accessing h2 console
 The book is starting to h e a v i l y diverge from being able to have a coherent project structure, and is refactoring things seemingly willy nilly.
 Assuming I follow the book and continue merging, I will lose previous work examples, so for the sake of keeping the examples, I will be saving each thing to its own branch and not merging into main.
 
+4/6/24 part 2
+Changed to JDBC data dependency instead of JdbcTemplate
+Updated orderRepository to use JDBC instead of JDBC Template
+Updated ingredientRepository to use JDBC instead of JDBC Template
+Removed unnecessary classes, these aren't needed with JDBC data
+Annotated some domain objects with @table and @id
+ingredient.java is fully prepped for data persistence
+
+4/8/24
+removed final from ingredient.java so the project could run
+changed repo to crudrepo in ingredrepo for a method in CommandLineRunner
+Initialized date in TacoOrder because it was previously initialized in a jdbc repo which was deleted
+added commandlinerunner to APP file
+deleted unused sql file
 
 Important message to copy:
 Check Readme for Accessing the H2 database
+
+4/9/24
+Added final back to ingredient object, and added lombok @with annotation.
+Checked out new branch
+Updated pom.xml with jpa dependency instead of jdbc
+Updated ingredient domain object to use JPA instead of JDBC
+Updated taco domain object for jpa instead of jdbc
+Updated tacoorder domain object for jpa instead of jdbc
+Removed comments from ingredientrepo interface
+
