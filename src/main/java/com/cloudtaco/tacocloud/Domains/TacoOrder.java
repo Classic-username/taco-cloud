@@ -21,12 +21,14 @@ import org.hibernate.validator.constraints.CreditCardNumber;
 import lombok.Data;
 
 @Data
+@Entity
 public class TacoOrder implements Serializable {
 
     private static final Long serialVersionUID = 1L;
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private Date placedAt = new Date();
 
